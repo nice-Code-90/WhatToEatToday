@@ -60,6 +60,7 @@ h1 {
 .search_container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin: 10px 5px;
 }
 body {
@@ -76,6 +77,9 @@ body {
     background-size: cover;
   }
   .search_by {
+    font-size: 2rem;
+  }
+  .welcome_text {
     font-size: 2rem;
   }
 }
