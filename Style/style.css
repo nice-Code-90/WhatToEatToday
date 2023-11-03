@@ -1,42 +1,85 @@
-/*CSS Reset*/
+/* CSS Reset */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 html {
   font-size: 10px;
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
+
 header {
-  background-image: url(/pic/header.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+    url("/pic/header.jpg");
+
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
 }
+
 h1 {
-  color: rgb(75, 160, 137);
-  font-size: 4rem;
+  color: rgb(39, 165, 47);
+  font-size: 6rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+.search_button {
+  background-color: #13aa52;
+  border: 1px solid #13aa52;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  cursor: pointer;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  touch-action: manipulation;
+  margin: 10px;
+}
+
+.search_button:hover {
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.15);
+}
+
+#Input_Search {
+  padding: 5px;
+}
+
+.search_container {
+  display: flex;
+  align-items: center;
+  margin: 10px 5px;
+}
+body {
+  background-color: #1a461b;
+}
+.search_by {
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
 }
 
 @media (min-width: 576px) {
   header {
-    height: 200px;
+    height: 15rem;
     background-size: cover;
+  }
+  .search_by {
+    font-size: 2rem;
   }
 }
 
 @media (min-width: 768px) {
-}
-
-@media (min-width: 992px) {
-}
-
-@media (min-width: 1200px) {
+  /* Ezt a részt is további stílusokkal kiegészítheted, ha szükséges */
 }

@@ -5,16 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WhatToEatToday</title>
     <link rel="stylesheet" href="./Style/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
       <h1>What To Eat Today</h1>
-      <label for=""> Key Words(name,nutrients,ingredients ):</label>
-      <input type="text" id="Input_Search" />
-      <button class="search js-search">Search Food</button>
     </header>
     <main>
-      <div class="list_of_recipes js-list_of_recipes"></div>
+      <div class="search_container">
+        <label class="search_by">
+          Key Words(name,nutrients,ingredients ):</label
+        >
+        <input type="text" id="Input_Search" />
+        <button class="search_button js_search">Search Food</button>
+      </div>
+      <div class="list_of_recipes"></div>
     </main>
     <footer></footer>
   </body>
