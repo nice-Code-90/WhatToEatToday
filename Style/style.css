@@ -1,0 +1,42 @@
+/*CSS Reset*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 10px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+header {
+  background-image: url(/pic/header.jpg);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+h1 {
+  color: rgb(75, 160, 137);
+  font-size: 4rem;
+}
+
+@media (min-width: 576px) {
+  header {
+    height: 200px;
+    background-size: cover;
+  }
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}
