@@ -70,6 +70,9 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: bold;
 }
+.icon {
+  width: 2rem;
+}
 
 @media (min-width: 576px) {
   header {
@@ -108,9 +111,6 @@ body {
   }
   .meal-portion {
     margin-left: 15px;
-  }
-  .icon {
-    width: 2rem;
   }
 }
 
