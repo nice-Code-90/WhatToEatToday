@@ -82,6 +82,18 @@ body {
   .welcome_text {
     font-size: 2rem;
   }
+  .list_of_recipes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  .meal-thumbnail-img {
+    width: 100%;
+    margin: 20px 0;
+  }
 }
 
 @media (min-width: 768px) {
