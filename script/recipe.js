@@ -15,38 +15,71 @@ SubmitButton.addEventListener("submit", async (event) => {
       value += `&diet=vegan|vegetarian`;
     }
 
-    const data = await fetch(
-      `${API}complexSearch?query=${value}&apiKey=${API_KEY}`
-    );
-    const response = await data.json();
+    try {
+      const data = await fetch(
+        `${API}complexSearch?query=${value}&apiKey=${API_KEY}`
+      );
+      if (!data.ok) {
+        throw new Error("Error during the request");
+      }
+      const response = await data.json();
 
-    renderRecipe(response);
-  } else {
-    $errorField.innerHTML = "Empty Search Input";
-  }
-
-  function renderRecipe(response) {
-    let html = "";
-    if (!Array.isArray(response.results)) {
-      $errorField.innerHTML = "Nincs találat.";
-      return;
+      if (Array.isArray(response.results) && response.results.length > 0) {
+        renderRecipe(response.results);
+      } else {
+        $errorField.innerHTML = "No results found.";
+      }
+    } catch (error) {
+      console.error(error);
+      $errorField.innerHTML = "An error occurred during the search.";
     }
-    for (let meal of response.results) {
-      html += `
-      <section class="meal">
-        <h3>${meal.title}</h3>
-        <img 
+  } else {
+    $errorField.innerHTML = "Empty search input.";
+  }
+});
+
+async function renderRecipe(results) {
+  let html = "";
+
+  for (let meal of results) {
+    const MoreDetails = await fetch(
+      `${API}${meal.id}/information?apiKey=${API_KEY}`
+    );
+
+    if (!MoreDetails.ok) {
+      throw new Error("Error during the request");
+    }
+
+    const infos = await MoreDetails.json();
+    console.log(infos); // Detailed recipe information
+
+    let price = infos.cheap ? "cheap" : "expensive";
+
+    html += `
+    <section class="meal">
+      <img 
         src="${meal.image}"
         alt="${meal.title}"
         class="meal-thumbnail-img" />
-
-      </section>
-      `;
-    }
-    if (html.length > 0) {
-      ListOfRecipes.innerHTML = html;
-    } else {
-      $errorField.innerHTML = "Nincs találat";
-    }
+      <h3>${meal.title}</h3>
+      <div class="attribs">
+        <div class="meal-time">
+          ${infos.readyInMinutes} minutes
+        </div>
+        <div class="meal-portion"> 
+          ${infos.servings} servings
+        </div>
+        <div class="meal-price"> 
+          ${price}
+        </div>
+      </div>
+    </section>
+    `;
   }
-});
+
+  if (html.length > 0) {
+    ListOfRecipes.innerHTML = html;
+  } else {
+    $errorField.innerHTML = "No results found.";
+  }
+}

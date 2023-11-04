@@ -94,6 +94,14 @@ body {
     width: 100%;
     margin: 20px 0;
   }
+  .meal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .attribs {
+    font-size: 1.7rem;
+  }
 }
 
 @media (min-width: 768px) {
