@@ -15,7 +15,7 @@ img {
 }
 
 header {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)),
     url("/pic/header.jpg");
 
   display: flex;
@@ -29,7 +29,7 @@ h1 {
   font-family: "Open Sans", sans-serif;
 }
 
-.search_button {
+.submit {
   background-color: #13aa52;
   border: 1px solid #13aa52;
   border-radius: 4px;
@@ -49,7 +49,7 @@ h1 {
   margin: 10px;
 }
 
-.search_button:hover {
+.submmit:hover:hover {
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.15);
 }
 
