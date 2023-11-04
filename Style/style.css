@@ -101,6 +101,16 @@ body {
   }
   .attribs {
     font-size: 1.7rem;
+    display: grid;
+    grid-template-columns: auto auto;
+
+    margin-top: 5px;
+  }
+  .meal-portion {
+    margin-left: 15px;
+  }
+  .icon {
+    width: 2rem;
   }
 }
 

@@ -64,12 +64,27 @@ async function renderRecipe(results) {
       <h3>${meal.title}</h3>
       <div class="attribs">
         <div class="meal-time">
+        <img
+            src="/pic/hourglass.png"
+            class="icon"
+            alt"hourglass_icon"
+        />
           ${infos.readyInMinutes} minutes
         </div>
         <div class="meal-portion"> 
+        <img
+            src="/pic/cooker.png"
+            class="icon"
+            alt"cooker_icon"
+        />
           ${infos.servings} servings
         </div>
         <div class="meal-price"> 
+        <img
+            src="/pic/wallet.png"
+            class="icon"
+            alt"wallet_icon"
+        />
           ${price}
         </div>
       </div>
