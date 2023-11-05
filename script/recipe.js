@@ -51,7 +51,6 @@ async function renderRecipe(results) {
     }
 
     const infos = await MoreDetails.json();
-    console.log(infos); // Detailed recipe information
 
     let price = infos.cheap ? "cheap" : "expensive";
 
@@ -61,7 +60,7 @@ async function renderRecipe(results) {
         src="${meal.image}"
         alt="${meal.title}"
         class="meal-thumbnail-img" />
-      <h3>${meal.title}</h3>
+      <h3 class="meal-title">${meal.title}</h3>
       <div class="attribs">
         <div class="meal-time">
         <img

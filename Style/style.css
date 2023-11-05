@@ -25,8 +25,21 @@ header {
 
 h1 {
   color: rgb(39, 165, 47);
-  font-size: 6rem;
+  font-size: 3rem;
   font-family: "Open Sans", sans-serif;
+}
+.meal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.meal-title {
+  font-size: 1.5rem;
+}
+
+header {
+  height: 10rem;
+  background-size: cover;
 }
 
 .submit {
@@ -60,8 +73,9 @@ h1 {
 .search_container {
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: space-between;
-  margin: 10px 5px;
+  margin: 20px 5px;
 }
 body {
   background-color: #1a461b;
@@ -69,12 +83,27 @@ body {
 .search_by {
   font-family: "Lato", sans-serif;
   font-weight: bold;
+  margin: 0.4rem;
 }
 .icon {
   width: 2rem;
 }
+.attribs {
+  font-size: 1.3rem;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.meal-thumbnail-img {
+  width: 80%;
+  margin: 20px 0;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
+}
 
 @media (min-width: 576px) {
+  /**/
+  h1 {
+    font-size: 6rem;
+  }
   header {
     height: 15rem;
     background-size: cover;
