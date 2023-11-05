@@ -24,17 +24,24 @@
     </header>
     <main>
       <form action="#">
-        <div class="search_container">
-          <label class="search_by"> Search: </label>
-          <input type="text" id="Input_Search" />
-          <label class="search_by">Diet?</label>
-          <select name="diet" id="diet">
-            <option value="yes">yes</option>
-            <option value="no">no</option>
-          </select>
-
-          <button type="submit" class="submit">Search Food</button>
-          <div class="error js-error"></div>
+        <div class="filters">
+          <div class="search_container">
+            <div class="search_conatiner_1">
+              <label class="search_by"> Search: </label>
+              <input type="text" id="Input_Search" />
+            </div>
+            <div class="search_container_2">
+              <label class="search_by">Diet?</label>
+              <select name="diet" id="diet">
+                <option value="yes">yes</option>
+                <option value="no">no</option>
+              </select>
+            </div>
+          </div>
+          <div class="button">
+            <button type="submit" class="submit">Search Food</button>
+            <div class="error js-error"></div>
+          </div>
         </div>
       </form>
 

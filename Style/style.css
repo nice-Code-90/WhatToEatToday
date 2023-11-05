@@ -22,6 +22,9 @@ header {
   flex-direction: column;
   align-items: center;
 }
+.search_by {
+  font-size: 1.5rem;
+}
 
 h1 {
   color: rgb(39, 165, 47);
@@ -34,9 +37,15 @@ h1 {
   align-items: center;
 }
 .meal-title {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
-
+.search_conatiner_1,
+.search_container_2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 2rem;
+}
 header {
   height: 10rem;
   background-size: cover;
@@ -60,6 +69,19 @@ header {
   user-select: none;
   touch-action: manipulation;
   margin: 10px;
+  max-width: 10rem;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  max-width: 10rem;
+  height: 5rem;
+}
+.filter {
+  display: flex;
+  flex-direction: column;
 }
 
 .submmit:hover:hover {
@@ -94,13 +116,72 @@ body {
   grid-template-columns: auto auto auto;
 }
 .meal-thumbnail-img {
-  width: 80%;
-  margin: 20px 0;
+  width: 25rem;
+  margin: 20px auto;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
+}
+.meal-title {
+  text-align: center;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 414px) {
+  .list_of_recipes {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 3rem;
+  }
+  .search_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .meal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1.5rem;
+  }
+  .meal-time,
+  .meal-portion,
+  .meal-price {
+    display: flex;
+    flex-direction: row;
+  }
+  .attribs {
+    display: flex;
+    flex-direction: column;
+  }
+  .meal-thumbnail-img {
+    min-width: 16rem;
+  }
 }
 
 @media (min-width: 576px) {
   /**/
+  .filters {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+  }
+  .search_container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px 5px;
+  }
+  .submit {
+    display: flex;
+    margin: 1rem;
+    justify-content: center;
+  }
   h1 {
     font-size: 6rem;
   }
@@ -108,29 +189,23 @@ body {
     height: 15rem;
     background-size: cover;
   }
-  .search_by {
-    font-size: 2rem;
-  }
+
   .welcome_text {
     font-size: 2rem;
   }
   .list_of_recipes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 3rem;
   }
   h3 {
     font-size: 2rem;
   }
   .meal-thumbnail-img {
-    width: 100%;
-    margin: 20px 0;
+    min-width: 20rem;
+    margin: 20px auto;
   }
-  .meal {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+
   .attribs {
     font-size: 1.7rem;
     display: grid;
@@ -143,6 +218,17 @@ body {
   }
 }
 
-@media (min-width: 768px) {
-  /* Ezt a részt is további stílusokkal kiegészítheted, ha szükséges */
+@media (min-width: 791px) {
+  /**/
+  .list_of_recipes {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+}
+@media (min-width: 1200px) {
+  /**/
+  .list_of_recipes {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  }
 }
