@@ -55,7 +55,7 @@ async function renderRecipe(results) {
     let price = infos.cheap ? "cheap" : "expensive";
 
     html += `
-    <section class="meal">
+    <section class="meal" id="${meal.id}">
       <img 
         src="${meal.image}"
         alt="${meal.title}"
@@ -93,6 +93,33 @@ async function renderRecipe(results) {
 
   if (html.length > 0) {
     ListOfRecipes.innerHTML = html;
+    const meals = document.querySelectorAll(".meal");
+
+    meals.forEach((meal) => {
+      meal.addEventListener("click", () => renderFullRecipe(meal));
+    });
+
+    function renderFullRecipe(meal) {
+      let ingredientString = "Ingredients:\n";
+      let instructions = "How to make the revipe:\n";
+      fetch(`${API}${meal.id}/information?apiKey=${API_KEY}`).then((data) =>
+        data.json().then((DetailedData) => {
+          for (let Ingredients of DetailedData.extendedIngredients) {
+            ingredientString += `${Ingredients.originalName}\n`;
+          }
+          console.log(ingredientString);
+        })
+      );
+      fetch(`${API}${meal.id}/analyzedInstructions?apiKey=${API_KEY}`).then(
+        (data) =>
+          data.json().then((instructions) => {
+            for (let nextStep of instructions[0].steps) {
+              instructions += `${nextStep.step}\n`;
+            }
+            console.log(instructions);
+          })
+      );
+    }
   } else {
     $errorField.innerHTML = "No results found.";
   }
