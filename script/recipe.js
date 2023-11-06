@@ -74,7 +74,7 @@ async function renderRecipe(results) {
         </div>
         <div class="meal-portion"> 
         <img
-            src="../pic/cooker.png"
+            src="./pic/cooker.png"
             class="icon"
             alt"cooker_icon"
         />
