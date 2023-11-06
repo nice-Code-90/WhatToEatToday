@@ -17,7 +17,7 @@ img {
 
 header {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)),
-    url("/pic/header.png");
+    url("./pic/header.png");
 
   display: flex;
   flex-direction: column;
