@@ -66,7 +66,7 @@ async function renderRecipe(results) {
       <div class="attribs">
         <div class="meal-time">
         <img
-            src="../pic/hourglass.png"
+            src="./pic/hourglass.png"
             class="icon"
             alt"hourglass_icon"
         />
@@ -82,7 +82,7 @@ async function renderRecipe(results) {
         </div>
         <div class="meal-price"> 
         <img
-            src="../pic/wallet.png"
+            src="./pic/wallet.png"
             class="icon"
             alt"wallet_icon"
         />
