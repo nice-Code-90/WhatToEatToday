@@ -17,7 +17,7 @@ img {
 
 header {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)),
-    url("/pic/header.jpg");
+    url("/pic/header.png");
 
   display: flex;
   flex-direction: column;
@@ -25,10 +25,11 @@ header {
 }
 .search_by {
   font-size: 1.5rem;
+  color: #071809;
 }
 
 h1 {
-  color: rgb(39, 165, 47);
+  color: rgb(24, 241, 17);
   font-size: 3rem;
   font-family: "Open Sans", sans-serif;
 }
@@ -53,8 +54,8 @@ header {
 }
 
 .submit {
-  background-color: #13aa52;
-  border: 1px solid #13aa52;
+  background-color: #146618;
+  border: 1px solid rgb(13, 136, 64);
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: #fff;
@@ -101,7 +102,7 @@ header {
   margin: 20px 5px;
 }
 body {
-  background-color: #1a461b;
+  background-color: #13aa40;
 }
 .search_by {
   font-family: "Lato", sans-serif;
@@ -120,9 +121,13 @@ body {
   width: 25rem;
   margin: 20px auto;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
+  border-radius: 5px;
 }
 .meal-title {
   text-align: center;
+}
+.welcome_text {
+  font-size: 2rem;
 }
 
 .button {
@@ -191,9 +196,6 @@ body {
     background-size: cover;
   }
 
-  .welcome_text {
-    font-size: 2rem;
-  }
   .list_of_recipes {
     display: grid;
     grid-template-columns: auto auto;
@@ -225,6 +227,9 @@ body {
     display: grid;
     grid-template-columns: auto auto auto;
   }
+  header {
+    height: 20rem;
+  }
 }
 @media (min-width: 1200px) {
   /**/
@@ -247,14 +252,18 @@ body {
   z-index: 1;
 }
 .modal-content {
-  background-color: #fff;
+  background-color: rgb(30, 184, 107);
   position: absolute;
+  font-size: 1.5rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+#recipeDetails {
+  font-size: 1.8rem;
 }
 
 .close-button {

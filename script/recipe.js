@@ -5,7 +5,9 @@ const ListOfRecipes = document.querySelector(".list_of_recipes");
 const $errorField = document.querySelector(".js-error");
 const API = `https://api.spoonacular.com/recipes/`;
 
-SubmitButton.addEventListener("submit", async (event) => {
+SubmitButton.addEventListener("submit", getRecipeList);
+
+async function getRecipeList(event) {
   event.preventDefault();
   ListOfRecipes.innerHTML = "";
   let value = Search_Text.value.trim();
@@ -36,7 +38,7 @@ SubmitButton.addEventListener("submit", async (event) => {
   } else {
     $errorField.innerHTML = "Empty search input.";
   }
-});
+}
 
 async function renderRecipe(results) {
   let html = "";
@@ -101,7 +103,7 @@ async function renderRecipe(results) {
 
     function renderFullRecipe(meal) {
       let ingredientString = "Ingredients:\n";
-      let instructions = "How to make the revipe:\n";
+      let instructions = "Step by step instructions:\n";
       fetch(`${API}${meal.id}/information?apiKey=${API_KEY}`).then((data) =>
         data
           .json()
@@ -123,7 +125,7 @@ async function renderRecipe(results) {
               .then(() => {
                 const recipeDetails = document.getElementById("recipeDetails");
                 recipeDetails.innerHTML =
-                  ingredientString + "<br>" + instructions;
+                  "<br>" + ingredientString + "<br><br>" + instructions;
                 const modal = document.getElementById("recipeModal");
 
                 modal.style.display = "block";
