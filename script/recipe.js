@@ -103,24 +103,39 @@ async function renderRecipe(results) {
       let ingredientString = "Ingredients:\n";
       let instructions = "How to make the revipe:\n";
       fetch(`${API}${meal.id}/information?apiKey=${API_KEY}`).then((data) =>
-        data.json().then((DetailedData) => {
-          for (let Ingredients of DetailedData.extendedIngredients) {
-            ingredientString += `${Ingredients.originalName}\n`;
-          }
-          console.log(ingredientString);
-        })
-      );
-      fetch(`${API}${meal.id}/analyzedInstructions?apiKey=${API_KEY}`).then(
-        (data) =>
-          data.json().then((instructions) => {
-            for (let nextStep of instructions[0].steps) {
-              instructions += `${nextStep.step}\n`;
+        data
+          .json()
+          .then((DetailedData) => {
+            for (let Ingredients of DetailedData.extendedIngredients) {
+              ingredientString += `${Ingredients.originalName}\n`;
             }
-            console.log(instructions);
+          })
+          .then(() => {
+            fetch(`${API}${meal.id}/analyzedInstructions?apiKey=${API_KEY}`)
+              .then((data) => data.json())
+              .then((instructionsData) => {
+                if (instructionsData.length > 0) {
+                  for (let nextStep of instructionsData[0].steps) {
+                    instructions += `${nextStep.step}\n`;
+                  }
+                }
+              })
+              .then(() => {
+                const recipeDetails = document.getElementById("recipeDetails");
+                recipeDetails.innerHTML =
+                  ingredientString + "<br>" + instructions;
+                const modal = document.getElementById("recipeModal");
+
+                modal.style.display = "block";
+              });
+
+            const closePopUp = document.getElementById("closeModal");
+            closePopUp.addEventListener("click", () => {
+              const modal = document.getElementById("recipeModal");
+              modal.style.display = "none";
+            });
           })
       );
     }
-  } else {
-    $errorField.innerHTML = "No results found.";
   }
 }
